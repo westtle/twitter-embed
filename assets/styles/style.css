@@ -1,0 +1,203 @@
+:root {
+	--font-source-sans-pro: "Source Sans Pro", sans-serif;
+	--font-size-paragraph: 1rem;
+
+	--black: 0, 0%, 0%;
+	--white: 0, 0%, 100%;
+
+	--blueish-white: 203, 100%, 96%; /* Main Background (Light Mode) */
+	--light-blue: 203, 89%, 53%; /* Hashtag / Box Shadow */
+	--dark-blue: 213, 33%, 21%; /* Tweet Background (Dark Mode) */
+	--very-dark-blue: 210, 31%, 11%; /* Main Background (Dark Mode) */
+}
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img,
+svg {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+body {
+	--font-primary: var(--font-source-sans-pro);
+	--font-size-primary: var(--font-size-paragraph);
+
+	--color-primary: var(--black);
+	--color-secondary: hsla(var(--color-primary), 0.6);
+	--color-tertiary: hsla(var(--light-blue), 0.2); /* Tweet Border & Box Shadow */
+
+	--color-theme-icon: hsl(var(--black)); /* Used in inline svg */
+
+	--background-color-body: hsl(var(--blueish-white));
+	--background-color-tweet: hsl(var(--white));
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: hsl(var(--color-primary));
+	background-color: var(--background-color-body);
+	min-height: 100vh;
+	padding-block: 2rem;
+	padding-inline: 1rem;
+	font-family: var(--font-primary);
+	font-size: var(--font-size-primary);
+}
+
+body[data-theme="dark-mode"] {
+	--color-primary: var(--white);
+	--color-secondary: hsla(var(--color-primary), 0.6);
+	--color-tertiary: rgba(52, 81, 116, 0.15);
+
+	--color-theme-icon: hsl(var(--white));
+
+	--background-color-body: hsl(var(--very-dark-blue));
+	--background-color-tweet: hsl(var(--dark-blue));
+}
+
+#theme-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+	border: none;
+	width: 2.1875rem;
+	aspect-ratio: 1/1;
+    opacity: 0.8;
+	cursor: pointer;
+
+	position: absolute;
+	top: 0.125rem;
+	left: 0.1875rem;
+}
+
+#theme-toggle svg { max-width: 1.3125rem; }
+
+@media (hover:hover) {
+	#theme-toggle { opacity: 0.55; }
+
+	#theme-toggle:hover,
+	#theme-toggle:focus-visible {
+		opacity: 0.8;
+	}
+}
+
+#twitter-embed {
+	background-color: var(--background-color-tweet);
+	border: 0.0625rem solid var(--color-tertiary);
+	border-radius: 0.625rem;
+	max-width: 37.5625rem;
+	padding-block: 2.125rem;
+	padding-inline: 1.875rem;
+	box-shadow: 0 0.9375rem 3.75rem var(--color-tertiary);
+}
+
+/* Top Row / User Info */
+
+.__top-row {
+	display: flex;
+	justify-content: space-between;
+	margin-block-end: 0.9375rem;
+}
+
+._user-info {
+	display: flex;
+	align-items: center;
+	gap: 1.375rem;
+}
+
+.profile-picture_ {
+	border-radius: 50%;
+	align-self: flex-start;
+}
+
+.name__ {
+	margin-block-end: 0.0625rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	line-height: 1.4375rem;
+}
+
+.name__ a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.handle__ {
+	color: var(--color-secondary);
+	font-size: inherit;
+	font-weight: 400;
+	line-height: 1.25rem;
+}
+
+._twitter-icon {
+	align-self: center;
+	background: none;
+	border: none;
+	margin-inline-end: 0.0625rem;
+	cursor: pointer;
+}
+
+/* Content Of The Tweet */
+
+.__tweet-content {
+	margin-block-end: 0.9375rem;
+	font-weight: 400;
+	line-height: 1.625rem;
+}
+
+.hashtag-- {
+	--color-hashtag: hsl(var(--light-blue));
+
+	color: var(--color-hashtag);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+@media (hover:hover) {
+	.hashtag--:hover,
+	.hashtag--:focus-visible {
+		text-decoration: underline;
+	}
+}
+
+/* Bottom Row / Likes & Time */
+
+.__bottom-row {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	color: var(--color-secondary);
+	font-weight: 600;
+	line-height: 1.625rem;
+}
+
+._like {
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+}
+
+.like-button_ {
+	align-self: flex-start;
+	background: none;
+	border: none;
+	padding-block-start: 0.0625rem;
+	cursor: pointer;
+}
+
+/* Attribution / Link */
+
+#attribution {
+	margin-block-start: 0.656rem;
+	font-size: 0.6875rem;
+	text-align: center;
+}
+
+#attribution a { color: hsl(228, 45%, 44%); }
