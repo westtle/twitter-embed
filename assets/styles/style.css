@@ -21,7 +21,8 @@ img,
 svg {
 	display: block;
 	height: auto;
-	max-width: 100%;
+	width: 100%;
+	max-width: 100%; /* This is kinda useless(?) but I will keep it here. */
 }
 
 body {
@@ -115,6 +116,8 @@ body[data-theme="dark-mode"] {
 .profile-picture_ {
 	border-radius: 50%;
 	align-self: flex-start;
+	width: 3.125rem;
+	overflow: hidden;
 }
 
 .name__ {
@@ -137,11 +140,10 @@ body[data-theme="dark-mode"] {
 }
 
 ._twitter-icon {
-	display: flex;
-	flex-shrink: 0;
 	align-self: center;
 	background: none;
 	border: none;
+	width: 1.75rem;
 	margin-inline-end: 0.0625rem;
 	cursor: pointer;
 }
@@ -187,11 +189,10 @@ body[data-theme="dark-mode"] {
 }
 
 .like-button_ {
-	display: flex;
-	flex-shrink: 0;
 	align-self: flex-start;
 	background: none;
 	border: none;
+	width: 1.5rem;
 	padding-block-start: 0.0625rem;
 	cursor: pointer;
 }
