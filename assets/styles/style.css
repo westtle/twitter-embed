@@ -137,6 +137,8 @@ body[data-theme="dark-mode"] {
 }
 
 ._twitter-icon {
+	display: flex;
+	flex-shrink: 0;
 	align-self: center;
 	background: none;
 	border: none;
@@ -185,6 +187,8 @@ body[data-theme="dark-mode"] {
 }
 
 .like-button_ {
+	display: flex;
+	flex-shrink: 0;
 	align-self: flex-start;
 	background: none;
 	border: none;
